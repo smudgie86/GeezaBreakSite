@@ -1,0 +1,520 @@
+<!doctype html>
+
+<html lang="en" class="home section0">
+<!-- InstanceBegin template="http://www.geezabreak.org.uk/Templates/Standard.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <!-- InstanceBeginEditable name="doctitle" -->
+  <title>Home | Geeza Break</title>
+  <!-- InstanceEndEditable -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://www.geezabreak.org.uk/local/scripts/app.js"></script>
+  <script src="http://www.geezabreak.org.uk/core/scripts/common.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link rel="index" href="http://www.geezabreak.org.uk/articles/" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.geezabreak.org.uk/news/news.rss.php" />
+  <!-- manually use href="tel:" links -->
+  <meta name="format-detection" content="telephone=no">
+  <link href="http://www.geezabreak.org.uk/local/css/layout.css?rand=" rel="stylesheet" media="screen" />
+  <link href="http://www.geezabreak.org.uk/local/css/styles.css?rand=" rel="stylesheet" media="screen" />
+  <link href="http://www.geezabreak.org.uk/local/css/printstyles.css" rel="stylesheet" media="print" />
+  <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"http://www.geezabreak.org.uk/>
+    <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="http://www.geezabreak.org.uk//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://www.geezabreak.org.uk//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <meta name="generator" content="Powered by Full Bhuna. http://www.fullbhuna.com">
+  <script>
+    $(document).ready(function () {
+      // executes when HTML-Document is loaded and DOM is ready
+      $('.hamburger').click(function () { // Capture responsive menu button click
+        // Show/hide menu
+        $('.main-menu').fadeToggle();
+        $(this).toggleClass("open");
+      });
+
+      $(".cycle").cycle();
+
+      $('.main-menu li:has(ul)').doubleTapToGo(); // fixes drop down issues on TOUCH devices (resolution independent) - function below
+
+      // screen size cookie
+      if (!getCookie("fb_screensize") && screen.width > 0) {
+        setCookie("fb_screensize", screen.width + "x" + screen.height);
+        getData("http://www.geezabreak.org.uk/core/seo/includes/screensize.ajax.php?width=" + screen.width + "&height=" + screen.height);
+      }
+
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 30) {
+          $("header").addClass("minimised scrolled");
+        } else {
+          $("header").removeClass("minimised");
+        }
+      });
+
+      $('.js-scroll-to').click(function (e) {
+        target = $($(this).attr('href'));
+        if (target.offset()) {
+          $('html, body').animate({
+            scrollTop: target.offset().top + 'px'
+          }, 600);
+        }
+        e.preventDefault();
+      });
+
+      /*$('.lazy').lazy({ // optional params
+          effect: "fadeIn",
+          effectTime: 2000,
+          threshold: 0
+        }); // lazy load images (requires data-src set)
+  */
+      /* SIMPLE ACCORDION */
+
+      var allPanels = $('.accordion + *').hide();
+
+      $('.accordion').click(function () {
+        allPanels.slideUp();
+        $(this).next().slideDown();
+        return false;
+      });
+    });
+
+
+    $(window).on('load', function () {
+      // executes when complete page is fully loaded, including all frames, objects and images
+    });
+
+    new WOW().init();
+
+    /*
+      doubleTapToGo addition for touch menus
+    */
+
+    ;
+    (function ($, window, document, undefined) {
+      $.fn.doubleTapToGo = function (params) {
+        if (!('ontouchstart' in window) &&
+          !navigator.msMaxTouchPoints &&
+          !navigator.userAgent.toLowerCase().match(/windows phone os 7/i)) return false;
+
+        this.each(function () {
+          var curItem = false;
+
+          $(this).on('click', function (e) {
+            var item = $(this);
+            if (item[0] != curItem[0]) {
+              e.preventDefault();
+              curItem = item;
+            }
+          });
+
+          $(document).on('click touchstart MSPointerDown', function (e) {
+            var resetItem = true,
+              parents = $(e.target).parents();
+
+            for (var i = 0; i < parents.length; i++)
+              if (parents[i] == curItem[0])
+                resetItem = false;
+
+            if (resetItem)
+              curItem = false;
+          });
+        });
+        return this;
+      };
+    })(jQuery, window, document);
+  </script><!-- InstanceBeginEditable name="head" -->
+  <meta name="keywords" content="Home" />
+  <meta name="author" content="Paul Egan" />
+  <link rel="canonical" href="http://www.geezabreak.org.uk/">
+  <meta name="description" content="Home" />
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <!--<meta name="twitter:site" content="@publisher_handle">
+<meta name="twitter:creator" content="@author_handle">-->
+  <meta name="twitter:title" content="Home">
+  <meta name="twitter:description" content="Home">
+  <!-- Open Graph data -->
+  <meta property="og:url" content="http://www.geezabreak.org.uk/" />
+  <meta property="og:site_name" content="Full Bhuna" />
+  <meta property="og:title" content="Home" />
+  <meta property="og:description" content="Home" />
+  <meta property="og:type" content="article" />
+
+
+  <style>
+    .topImage {
+      width: 100%;
+    }
+
+    .carousel-caption {
+      font-size: large;
+      font-weight: bold;
+      text-shadow: none;
+      padding-bottom: 0;
+    }
+  </style><!-- InstanceEndEditable -->
+</head>
+<!-- ISEARCH_END_INDEX -->
+
+<body class="bootstrap home section0 region1">
+
+  <header>
+
+
+    <nav>
+      <div class="container"><a href="http://www.geezabreak.org.uk/" class="logo ">Logo</a>
+        <!--<div class="hamburger"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu</div>-->
+        <div class="animated hamburger">
+          <div class="menu-line menu-line-1"></div>
+          <div class="menu-line menu-line-2"></div>
+          <div class="menu-line menu-line-3"></div>
+        </div>
+        <ul class="main-menu fb-menu  num_items5" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+          <li itemprop="name" class="item0 section section0 article0 selected active "><a itemprop="url"
+              href="http://www.geezabreak.org.uk/" title="Home">Home</a></li><!-- section 5>=2 strlen=526-->
+          <li itemprop="name" class="item1 section depth4 has-child  section1 article0 "><a itemprop="url"
+              href="http://www.geezabreak.org.uk/services/" title="Services" target="_self">Services</a>
+            <ul class=" fb-menu  num_items2" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <!-- article 2>=2 strlen=0-->
+              <li itemprop="name" class="item1 article depth3 no-child  section1 article18 "><a itemprop="url"
+                  href="http://www.geezabreak.org.uk/services/Respite/" title="Respite" target="_self">Respite</a></li>
+              <!-- article 2>=2 strlen=0-->
+              <li itemprop="name" class="item2 article depth3 no-child  section1 article23 "><a itemprop="url"
+                  href="http://www.geezabreak.org.uk/services/Family-Support/" title="Family Support"
+                  target="_self">Family Support</a></li>
+            </ul>
+          </li><!-- section 5>=2 strlen=542-->
+          <li itemprop="name" class="item2 section depth4 has-child  section2 article0 "><a itemprop="url"
+              href="http://www.geezabreak.org.uk/who-we-are/" title="Who We are" target="_self">Who We are</a>
+            <ul class=" fb-menu  num_items2" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <!-- article 2>=2 strlen=0-->
+              <li itemprop="name" class="item1 article depth3 no-child  section2 article12 "><a itemprop="url"
+                  href="http://www.geezabreak.org.uk/who-we-are/Who-We-Are/" title="Who We Are" target="_self">Who We
+                  Are</a></li>
+              <!-- article 2>=2 strlen=0-->
+              <li itemprop="name" class="item2 article depth3 no-child  section2 article14 "><a itemprop="url"
+                  href="http://www.geezabreak.org.uk/who-we-are/Staff-and-Board/" title="Staff and Board"
+                  target="_self">Staff and Board</a></li>
+            </ul>
+          </li><!-- section 5>=2 strlen=317-->
+          <li itemprop="name" class="item3 section depth4 has-child  section3 article0 "><a itemprop="url"
+              href="http://www.geezabreak.org.uk/professionals/" title="Professionals" target="_self">Professionals</a>
+            <ul class=" fb-menu  num_items1" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <!-- article 1>=2 strlen=0-->
+              <li itemprop="name" class="item1 article depth3 no-child  section3 article31 "><a itemprop="url"
+                  href="http://www.geezabreak.org.uk/professionals/Resources/" title="Resources"
+                  target="_self">Resources</a></li>
+            </ul>
+          </li><!-- section 5>=2 strlen=337-->
+          <li itemprop="name" class="item4 section depth4 has-child  section4 article0 "><a itemprop="url"
+              href="http://www.geezabreak.org.uk/vacancies/" title="Vacancies" target="_self">Vacancies</a>
+            <ul class=" fb-menu  num_items1" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <!-- article 1>=2 strlen=0-->
+              <li itemprop="name" class="item1 article depth3 no-child  section4 article27 "><a itemprop="url"
+                  href="http://www.geezabreak.org.uk/vacancies/Current-Vacancies/" title="Current Vacancies"
+                  target="_self">Current Vacancies</a></li>
+            </ul>
+          </li><!-- section 5>=2 strlen=312-->
+          <li itemprop="name" class="item5 section depth4 has-child  section5 article0 "><a itemprop="url"
+              href="http://www.geezabreak.org.uk/contact-us-section/" title="Contact Us" target="_self">Contact Us</a>
+            <ul class=" fb-menu  num_items1" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+              <!-- article 1>=2 strlen=0-->
+              <li itemprop="name" class="item1 article depth3 redirect  section5 article29 "><a itemprop="url"
+                  href="http://www.geezabreak.org.uk/mail/contact.php" title="Contact Us" target="_self">Contact Us</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="translate">
+          <div class="translation">
+            <form action="http://www.geezabreak.org.uk/core/region/translate.php" method="get" class="form-inline">
+              <select name="translate" id="translate" onchange="this.form.submit();" class="form-control">
+                <option value=""> Translate to...</option>
+                <option value="Afrikaans|https%3A%2F%2Fwww.geezabreak.org.uk%2F|af|">Afrikaans</option>
+                <option value="Albanian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|sq|">Albanian</option>
+                <option value="Arabic|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ar|">Arabic</option>
+                <option value="Belarusian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|be|">Belarusian</option>
+                <option value="Bulgarian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|bg|">Bulgarian</option>
+                <option value="Catalan|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ca|">Catalan</option>
+                <option value="Chinese|https%3A%2F%2Fwww.geezabreak.org.uk%2F|zh-CN|">Chinese</option>
+                <option value="Croatian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|hr|">Croatian</option>
+                <option value="Czech|https%3A%2F%2Fwww.geezabreak.org.uk%2F|cs|">Czech</option>
+                <option value="Danish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|da|">Danish</option>
+                <option value="Dutch|https%3A%2F%2Fwww.geezabreak.org.uk%2F|nl|">Dutch</option>
+                <!--<option  value="English|https%3A%2F%2Fwww.geezabreak.org.uk%2F|en|">English</option>-->
+                <option value="Estonian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|et|">Estonian</option>
+                <option value="Filipino|https%3A%2F%2Fwww.geezabreak.org.uk%2F|tl|">Filipino</option>
+                <option value="Finnish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|fi|">Finnish</option>
+                <option value="French|https%3A%2F%2Fwww.geezabreak.org.uk%2F|fr|">French</option>
+                <option value="Galician|https%3A%2F%2Fwww.geezabreak.org.uk%2F|gl|">Galician</option>
+                <option value="German|https%3A%2F%2Fwww.geezabreak.org.uk%2F|det|">German</option>
+                <option value="Greek|https%3A%2F%2Fwww.geezabreak.org.uk%2F|el|">Greek</option>
+                <option value="Hebrew|https%3A%2F%2Fwww.geezabreak.org.uk%2F|iw|">Hebrew</option>
+                <option value="Hindi|https%3A%2F%2Fwww.geezabreak.org.uk%2F|hi|">Hindi</option>
+                <option value="Hungarian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|hu|">Hungarian</option>
+                <option value="Icelandic|https%3A%2F%2Fwww.geezabreak.org.uk%2F|is|">Icelandic</option>
+                <option value="Indonesian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|id|">Indonesian</option>
+                <option value="Irish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ga|">Irish Gaelic</option>
+                <option value="Italian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|it|">Italian</option>
+                <option value="Japanese|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ja|">Japanese</option>
+                <option value="Korean|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ko|">Korean</option>
+                <option value="Latvian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|lv|">Latvian</option>
+                <option value="Lithuanian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|lt|">Lithuanian</option>
+                <option value="Macedonian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|mk|">Macedonian</option>
+                <option value="Malay|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ms|">Malay</option>
+                <option value="Maltese|https%3A%2F%2Fwww.geezabreak.org.uk%2F|mt|">Maltese</option>
+                <option value="Norwegian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|no|">Norwegian</option>
+                <option value="Polish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|pl|">Polish</option>
+                <option value="Portuguese|https%3A%2F%2Fwww.geezabreak.org.uk%2F|pt|">Portuguese</option>
+                <option value="Romanian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ro|">Romanian</option>
+                <option value="Russian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ru|">Russian</option>
+                <option value="Serbian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|sr|">Serbian </option>
+                <option value="Slovak|https%3A%2F%2Fwww.geezabreak.org.uk%2F|sk|">Slovak</option>
+                <option value="Slovenian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|sl|">Slovenian</option>
+                <option value="Spanish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|es|">Spanish</option>
+                <option value="Swahili|https%3A%2F%2Fwww.geezabreak.org.uk%2F|sw|">Swahili</option>
+                <option value="Swedish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|sv|">Swedish</option>
+                <option value="Thai|https%3A%2F%2Fwww.geezabreak.org.uk%2F|th|">Thai</option>
+                <option value="Turkish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|tr|">Turkish</option>
+                <option value="Ukrainian|https%3A%2F%2Fwww.geezabreak.org.uk%2F|uk|">Ukrainian</option>
+                <option value="Urdu|https%3A%2F%2Fwww.geezabreak.org.uk%2F|ur|">Urdu</option>
+                <option value="Vietnamese|https%3A%2F%2Fwww.geezabreak.org.uk%2F|vi|">Vietnamese</option>
+                <option value="Welsh|https%3A%2F%2Fwww.geezabreak.org.uk%2F|cy|">Welsh</option>
+                <option value="Yiddish|https%3A%2F%2Fwww.geezabreak.org.uk%2F|yi|">Yiddish</option>
+                <option value="">More languages soon</option>
+              </select>
+
+
+            </form>
+          </div>
+          &nbsp;&nbsp;&nbsp; <strong class="green" style="font-size:1.5em;"><i class="glyphicon glyphicon-earphone"></i>
+            0141 573 2900</strong>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+    <!-- The content inside the <main> element should be unique to the document. It should not contain any content that is repeated across documents such as sidebars, navigation links, copyright information, site logos, and search forms. -->
+    <!-- ISEARCH_BEGIN_INDEX -->
+    <!-- InstanceBeginEditable name="Body" -->
+
+    <section>
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://via.placeholder.com/1900x400" class="d-block w-100 img-fluid" alt="...">
+            <div class="carousel-caption">
+              <div class="text-left" style="color:#333;">
+                <p>First slide label</p>
+                <p>Some representative placeholder content for the first slid
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="main" class="container" style="margin-top: 20px;">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img data-wow-duration="3s" class="wow rotateIn" src="https://via.placeholder.com/150" alt="...">
+            <div class="caption text-center">
+              <h3>Thumbnail label</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eaque hic qui quasi ullam libero
+                ratione, fuga eligendi explicabo impedit.</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                  role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img data-wow-duration="3s" data-wow-delay=".5s" class="wow rotateIn" src="https://via.placeholder.com/150"
+              alt="...">
+            <div class="caption text-center">
+              <h3>Thumbnail label</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias magnam officiis voluptatem, culpa,
+                quia nihil fuga ut veniam aspernatur voluptas odio neque modi dicta nisi asperiores eius suscipit
+                obcaecati fugit.</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                  role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img data-wow-duration="3s" data-wow-delay="1s" class="wow rotateIn" src="https://via.placeholder.com/150"
+              alt="...">
+            <div class="caption text-center">
+              <h3>Thumbnail label</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur harum qui, nisi non quod
+                asperiores autem, sed quia corrupti, commodi cum illo incidunt repudiandae nobis!</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                  role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="purple-bg" style="padding: 30px 0; margin-top: 20px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-center" style="margin:0; color: #fff;">Help us to keep going</h1>
+            <h2 class="text-center" style="margin-top: 0; margin-bottom: 30px; color: #fff;">Lorem, ipsum dolor sit amet
+              consectetur adipisicing elit. Ullam, odio?</h2>
+          </div>
+          <div class="col-md-4 text-center"><a class="btn btn-lg btn-warning"
+              href="http://www.geezabreak.org.uk/services/Family-Support/">
+              <h1>Donate Now</h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container wow fadeInUp" style="padding-top: 30px;">
+      <div class="row">
+        <div class="col-md-4"><img src="http://www.geezabreak.org.uk/local/images/elaine.jpg" alt="Elaine C Smith" />
+        </div>
+        <div class="col-md-8">
+          <h1>Our Patron</h1>
+          <h2>Message of Support from Elaine C Smith</h2>
+          <p>I am delighted to be a supporter of Geeza Break as it is a brilliant voluntary organisation that needs to
+            be applauded for helping to ensure that the most vulnerable in our community &ndash; both carers and those
+            who receive care
+            &ndash; get the best of help. The type of services offered plugs a much needed gap in childcare and family
+            support in the East End of Glasgow. As I live in this part of the city, I feel a close affinity to this
+            charity and was happy to
+            officially open their new premises.</p>
+          <p>Elaine C Smith</p>
+        </div>
+      </div>
+    </div>
+    <section class="green-bg tesimonials">
+      <div class="container">
+        <h2 class="text-center" style="color: rgba(255,255,255,1);">Testimonials</h2>
+        <ul class="cycle" data-cycle-slides="&gt; li">
+          <li>Amazing to be able to leave knowing kids are well looked after and happy it was a weight of my shoulders
+          </li>
+          <li>It helps a lot because it makes me have more time to do some other things for myself like shopping or have
+            a great day with my friends</li>
+          <li>Myself and daughter got to spend more time together</li>
+          <li>I did not think a couple of hours make much of a difference, but it did</li>
+          <li>The service we have received from Geeza Break and their staff has been invaluable to our family. It
+            provided us all with breathing space from each other. It made my husband and I more resilient when dealing
+            with problems if we knew a
+            respite session was due. It has also helped me to improve my health and return to work</li>
+          <li>It has helped relieve tension and give myself and husband a break. It also helped encourage me to
+            verbalise any concerns with regards to kids with the sitters and getting advice</li>
+          <li>It has been great. Gave me a great chance to have me time and catch up on appointments</li>
+          <li>I have enjoyed my time with my sitter. She is fun to be around</li>
+          <li>I really like Geeza Break they give my mum and us a break it gives us time to play as well. I definitely
+            want Geeza Break until I am 15</li>
+        </ul>
+      </div>
+    </section>
+    <div class="container text-center" style="padding: 20px; text-align: center;">
+      <div class="row">
+        <div class="col-md-2">
+          <!-- empty col-->
+        </div>
+        <div class="col-md-8">
+          <h2>Our Funders</h2>
+          <img src="http://www.geezabreak.org.uk/local/images/funders.png?v=2" alt="Funders" />
+          <iframe style="width: 412px; height: 44px; margin: 15px auto;"
+            src="https://www.careinspectorate.com/ciWidget/5/Q1MyMDE3MzU3OTEwX1NISGJRazJwTDNZSDhMMlU%3D/"
+            frameborder="0" scrolling="no"></iframe>
+          <hr>
+          <div class="container text-center" style="padding: 10px 0px; text-align: center;">
+            <p>Company Number: 357219</p>
+            <p>Place of Registration: Scotland</p>
+            <p>Charity Number SC019637</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <!-- empty col-->
+        </div>
+      </div>
+    </div>
+    <img src="search/auto_spider_img.php" width="1" height="1" alt="" /><!-- InstanceEndEditable -->
+  </main>
+  <!-- ISEARCH_END_INDEX -->
+
+  <footer>
+
+    <div class="footer container">
+      <div class="row">
+        <div class="col-md-4"><img src="http://www.geezabreak.org.uk/local/images/logo-white.svg"></div>
+        <div class="col-md-4">
+          <h3>Quick Links:</h3>
+          <ul class=" fb-menu  num_items5" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+            <li itemprop="name" class="item0 section section0 article0 selected active "><a itemprop="url"
+                href="http://www.geezabreak.org.uk/" title="Home">Home</a></li><!-- section 5>=2 strlen=528-->
+            <li itemprop="name" class="item1 section depth0 has-child  section1 article0 "><a itemprop="url"
+                href="http://www.geezabreak.org.uk/services/" title="Services" target="_self">Services</a></li>
+            <!-- section 5>=2 strlen=544-->
+            <li itemprop="name" class="item2 section depth0 has-child  section2 article0 "><a itemprop="url"
+                href="http://www.geezabreak.org.uk/who-we-are/" title="Who We are" target="_self">Who We are</a></li>
+            <!-- section 5>=2 strlen=318-->
+            <li itemprop="name" class="item3 section depth0 has-child  section3 article0 "><a itemprop="url"
+                href="http://www.geezabreak.org.uk/professionals/" title="Professionals"
+                target="_self">Professionals</a></li><!-- section 5>=2 strlen=338-->
+            <li itemprop="name" class="item4 section depth0 has-child  section4 article0 "><a itemprop="url"
+                href="http://www.geezabreak.org.uk/vacancies/" title="Vacancies" target="_self">Vacancies</a></li>
+            <!-- section 5>=2 strlen=313-->
+            <li itemprop="name" class="item5 section depth0 has-child  section5 article0 "><a itemprop="url"
+                href="http://www.geezabreak.org.uk/contact-us-section/" title="Contact Us" target="_self">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3>Get in touch:</h3>
+          <address>Geeza Break<br>
+            1450 – 1456 Gallowgate<br>Parkhead<br>G31 4ST<br><br>T : 0141 573 2900
+            <br>E :
+            <script>
+              writeEmail("info", "geezabreak.org.uk")
+            </script>
+          </address>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">&copy 2021 Geeza Break. Web by Digital Dexterity. <a
+          href="http://www.geezabreak.org.uk/legal/Privacy-Policy/">Privacy Policy</a> | <a
+          href="http://www.geezabreak.org.uk/legal/Disclaimer/">Terms &amp; Conditions</a>
+      </div>
+    </div>
+    </div>
+
+  </footer>
+  <!-- GOOGLE SCRIPTS -->
+  <!-- END GOOGLE SCRIPTS -->
+  <!-- START AD ROLL CONVERSION -->
+  <script>
+    adroll_conversion_value = 0;
+    adroll_currency = 'GBP';
+  </script>
+  <script>
+    getData("http://www.geezabreak.org.uk/mail/ajax/groupemail.ajax.php");
+  </script>
+  <div class="console container debug"></div>
+
+
+  <!-- ISEARCH_BEGIN_INDEX -->
+
+</body>
+<!-- InstanceEnd -->
+
+</html>
