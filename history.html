@@ -148,19 +148,31 @@
 
 
   <style>
-    .topImage {
-      width: 100%;
+    .hero-image {
+      background-image: url("/img/heading.jpg");
+      height: 350px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
     }
 
-    .carousel-caption {
-      font-size: large;
+    .hero-text {
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/opacity/see-through */
+      color: white;
       font-weight: bold;
-      text-shadow: none;
-      padding-bottom: 0;
-    }
-
-    .blue-bg {
-      background-color: #4fc7f4;
+      border: 3px solid #f1f1f1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 80%;
+      padding: 30px;
+      text-align: center;
     }
   </style><!-- InstanceEndEditable -->
 </head>
@@ -232,16 +244,14 @@
     <!-- The content inside the <main> element should be unique to the document. It should not contain any content that is repeated across documents such as sidebars, navigation links, copyright information, site logos, and search forms. -->
     <!-- ISEARCH_BEGIN_INDEX -->
     <!-- InstanceBeginEditable name="Body" -->
-    <section class="blue-bg" style="max-height: 250px;">
-      <div id="carouselExampleCaptions" class="carousel slide container" data-ride="carousel">
-        <div class="carousel-inner" style="background-color: grey; max-height: 250px;">
-          <div class="carousel-item active">
-            <img src="img/heading.jpg" class="d-block w-100 img-fluid"
-              style="opacity: 0.70; width: 100%; background-color: #fff;" alt="...">
-          </div>
+
+    <div class="container" style="width: 100%;">
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1 style="font-size:70px; color: #fff;">Our History</h1>
         </div>
       </div>
-    </section>
+    </div>
 
     <section class="green-bg" style="padding: 10px 0;">
       <div class="container">
